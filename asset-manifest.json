@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Fake-News-Detector/static/css/main.2cd19bc1.css",
+    "main.js": "/Fake-News-Detector/static/js/main.3812cc9c.js",
+    "static/js/453.ae84b21b.chunk.js": "/Fake-News-Detector/static/js/453.ae84b21b.chunk.js",
+    "static/media/image1.jpg": "/Fake-News-Detector/static/media/image1.c4c48f1c6296326181fe.jpg",
+    "index.html": "/Fake-News-Detector/index.html",
+    "main.2cd19bc1.css.map": "/Fake-News-Detector/static/css/main.2cd19bc1.css.map",
+    "main.3812cc9c.js.map": "/Fake-News-Detector/static/js/main.3812cc9c.js.map",
+    "453.ae84b21b.chunk.js.map": "/Fake-News-Detector/static/js/453.ae84b21b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2cd19bc1.css",
+    "static/js/main.3812cc9c.js"
+  ]
+}
