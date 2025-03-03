@@ -5,39 +5,45 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState('input');
   const [analysisData, setAnalysisData] = useState(null);
 
+  // Sample news data with URLs
   const sampleNews = [
     {
       title: "Breaking: Major Scientific Discovery",
       text: "Scientists have discovered a new species of tree that can purify air 100 times more effectively than regular trees. The discovery was made in a remote forest and researchers claim this could solve global air pollution within months.",
-      category: "Science"
+      category: "Science",
+      url: "https://www.nature.com/news" // URL added
     },
     {
       title: "Technology Update",
       text: "A new smartphone app claims to predict earthquakes 24 hours before they happen with 100% accuracy. The app has already been downloaded by millions of users worldwide despite no scientific verification.",
-      category: "Technology"
+      category: "Technology",
+      url: "https://www.technewsworld.com" // URL added
     },
     {
       title: "Health Alert",
       text: "A common household fruit has been found to completely cure all types of headaches instantly, according to a viral social media post. Medical experts are investigating these claims.",
-      category: "Health"
+      category: "Health",
+      url: "https://www.who.int/news" // URL added
     }
   ];
 
   // Input Page Component
   const InputPage = () => {
     const [newsText, setNewsText] = useState('');
+    const [newsUrl, setNewsUrl] = useState(''); // State for news URL
 
     const handleSubmit = (e) => {
       e.preventDefault();
       if (newsText.trim()) {
         setAnalysisData({
           newsText,
+          newsUrl, // Include news URL in analysis data
           result: {
             verdict: 'Potentially False',
             confidence: 85,
             sources: [
-              { url: 'https://example.com/fact1', title: 'Fact Check: Original Story' },
-              { url: 'https://example.com/fact2', title: 'Related Fact Check' }
+              { url: 'https://www.factchecker.in', title: 'Fact Check: Original Story' },
+              { url: 'https://timesofindia.indiatimes.com', title: 'Related Fact Check' }
             ]
           }
         });
@@ -45,8 +51,9 @@ export default function App() {
       }
     };
 
-    const handleSampleClick = (text) => {
+    const handleSampleClick = (text, url) => {
       setNewsText(text);
+      setNewsUrl(url || ''); // Set news URL when sample is clicked
     };
 
     return (
@@ -78,9 +85,12 @@ export default function App() {
             <h2 className="text-2xl font-semibold mb-4">CURRENT TRENDING NEWS</h2>
             <div className="space-y-4">
               {sampleNews.map((news, index) => (
-                <div 
+                <a 
                   key={index}
-                  className="p-4 border border-gray-200 rounded-lg hover:border-blue-500 transition-all cursor-pointer group"
+                  href={news.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-4 border border-gray-200 rounded-lg hover:border-blue-500 transition-all cursor-pointer group"
                 >
                   <div className="flex justify-between items-start mb-2">
                     <div>
@@ -90,7 +100,10 @@ export default function App() {
                       </span>
                     </div>
                     <button 
-                      onClick={() => handleSampleClick(news.text)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleSampleClick(news.text, news.url);
+                      }} // Prevent default anchor behavior and handle sample click
                       className="text-gray-400 hover:text-blue-600 p-1 rounded transition-colors"
                       title="Copy to input"
                     >
@@ -98,7 +111,7 @@ export default function App() {
                     </button>
                   </div>
                   <p className="text-gray-600 text-sm line-clamp-2">{news.text}</p>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -124,6 +137,16 @@ export default function App() {
             <p className="text-gray-700 bg-gray-50 p-4 rounded-lg">
               {analysisData.newsText}
             </p>
+            {analysisData.newsUrl && (   // Display news URL if available
+              <a
+                href={`https://${analysisData.newsUrl}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Source: {analysisData.newsUrl}
+              </a>
+            )}
           </div>
 
           <div className="bg-white/90 rounded-lg shadow-md p-6">
@@ -168,7 +191,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-[url('C:\Users\Raghava\Downloads\proofile\proofile\fakenews\image1.jpg')] bg-cover bg-center bg-fixed">
+    <div className="bg-[url('C:\\Users\\Raghava\\Downloads\\proofile\\proofile\\fakenews\\image1.jpg')] bg-cover bg-center bg-fixed">
       {currentPage === 'input' ? <InputPage /> : <ResultPage />}
     </div>
   );
