@@ -1,4 +1,4 @@
-**CrediScan - Fake News Detector**  
+**CrediScan - Fake News Detector**
 
 A web application that helps users verify the credibility of news articles using machine learning and external fact-checking sources.  
 
@@ -11,32 +11,32 @@ A web application that helps users verify the credibility of news articles using
 
 ---  
 
-**Tech Stack**  
- **Frontend**  
+**Tech Stack 
+ Frontend**
 - React.js  
 - Tailwind CSS 
 ---  
 
-## **Installation & Setup**  
+**Installation & Setup **
 
-### **1. Clone the Repository**  
+  ** 1. Clone the Repository **
 ```sh
 git clone https://github.com/yourusername/credi-scan.git
 cd credi-scan
 ```
 
-### **2. Install Dependencies**  
+  ** 2. Install Dependencies**
 ```sh
 npm install
 ```
 
-### **3. Run the Development Server**  
+   **3. Run the Development Server  **
 ```sh
 npm start
 ```
 The app will be live at `http://localhost:3000/`.  
 
-## **Project Structure**  
+**  Project Structure **
 ```
 /credi-scan
 ├── public/          # Static assets
@@ -52,7 +52,7 @@ The app will be live at `http://localhost:3000/`.
 └── README.md        # Project documentation
 ```
 
-## **License**  
+ ** License **
 This project is licensed under the **MIT License**.  
 
 ---
