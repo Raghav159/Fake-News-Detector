@@ -191,7 +191,7 @@ export default function App() {
   };
 
   return (
-    <div className="bg-[url('C:\\Users\\Raghava\\Downloads\\proofile\\proofile\\fakenews\\image1.jpg')] bg-cover bg-center bg-fixed">
+    <div className="bg-[url('./image1.jpg')] bg-cover bg-center bg-fixed">
       {currentPage === 'input' ? <InputPage /> : <ResultPage />}
     </div>
   );

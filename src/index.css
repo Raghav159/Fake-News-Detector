@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -mz-osx-font-smoothing: grayscale;
   /* Add these lines for background */
-  background-image: url('C:\Users\Raghava\Downloads\proofile\proofile\fakenews\image1.jpg');
+  background-image: url('./image1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
